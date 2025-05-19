@@ -1,6 +1,7 @@
 /* بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ ﷺ InshaAllah */
 
 import { request, response } from "express";
+import { verifyToken } from "../utils/token.js";
 
 
 export function authMiddleware(req=request, res=response, next) {
@@ -23,6 +24,8 @@ export function authMiddleware(req=request, res=response, next) {
         
         next();
     } catch (error) {
+        console.error(error);
+        
         return res.status(401).json({ success: false, message: 'Authentication failed' });
     }
 };

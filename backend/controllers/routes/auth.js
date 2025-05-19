@@ -136,7 +136,7 @@ router.post('/auth/user-id' , authMiddleware, async function(req, res)  {
         }
         return res.status(200).json({
             success: false, 
-            message: 'Could not find User Account',
+            message: 'User Account Found',
             data : {
                 user
             }
