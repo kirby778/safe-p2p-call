@@ -66,10 +66,10 @@ router.post('/auth/init', async (req, res) => {
 // Verify OTP and issue token
 router.post('/auth/verify', async (req, res) => {
     try {
-        const { email, otp } = req.body;
+        let { email, otp } = req.body;
         
         if (!email || !otp) return res.status(400).json({ success: false, message: 'Email and OTP are required' });
-        if (typeof opt !== 'number' || otp <= 99999 || otp >= 1000000) {
+        if (typeof otp !== 'number' || otp <= 99999 || otp >= 1000000) {
             return res.status(400).json({
                 success : false ,
                 messages :"Otp is not valid"

@@ -23,6 +23,5 @@ export const SMTP_API_KEY= process.env.SMTP_API_KEY;
 export const FROM_EMAIL= process.env.FROM_EMAIL;
 
 
-
-
+export const JWT_EXPIRES_IN = Number(process.env.JWT_EXPIRES_IN) || (Date.now() + 30 * 24 * 3600 * 1000);
 export const JWT_SECRET= process.env.JWT_SECRET;

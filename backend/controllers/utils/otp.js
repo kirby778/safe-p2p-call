@@ -18,8 +18,8 @@ export const generateOTP = () => {
     const saltedHash = `${salt}:${hash}`;
     
     // Set expiration time (10 minutes from now)
-    const expiresAt = new Date();
-    expiresAt.setMinutes(expiresAt.getMinutes() + 10);
+    const expiresAt = new Date(Date.now() + 10 *60 *1000);
+    
     
     return {
         otp: {
