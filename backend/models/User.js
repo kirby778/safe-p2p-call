@@ -48,6 +48,14 @@ const UserSchema = new Schema({
     },
     otpExpiresAt: {
         type: Date
+    },
+    socket_ids : {
+        video_calling_socket : String,
+    },
+    
+    status : {
+        type : String,
+        enum : ['online' , 'busy' , 'offline']
     }
 });
 
