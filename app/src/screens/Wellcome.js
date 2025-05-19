@@ -9,23 +9,29 @@ import useStore from "../lib/utils/store";
 
 const Wellcome = () => {
     const nav = useNavigation();
-    const setToken = useStore(state => state.setToken)
+    const setToken = useStore(state => state.setBearerToken);
+    const setUserId = useStore(state => state.setUserId);
     useEffect(() => {
         (async function (params) {
             let result = await SecureStore.getItemAsync('bearerToken');
+          
             if (result) {
-                let response =await fetch(API_BASEURL + '/auth/user-id' , {
+                let response =await fetch(API_BASEURL + '/api/auth/user-id' , {
                     headers : {
                         "authorization" : `Bearer ${result}`
                     },
                     method : "POST"
                 });
+
                 switch (response.status === 200) {
-                    case 200:
+                    case true :
                         setToken(result);
                         nav.navigate('Home');
+                        let data =(await response.json()).data;
+                        setUserId(data.user.id)
                         break;
                     default:
+                        console.log((await response.json()));
                         nav.navigate('Join')
                         break;
                 }

@@ -14,7 +14,6 @@ export default function Join() {
   const handleJoin = async () => {
     isEditable.current = false;
     try {
-     
       function isValidEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return re.test(String(email).toLowerCase());
@@ -22,7 +21,7 @@ export default function Join() {
       if (!isValidEmail(email)) {
         return Alert.alert('Failed To Join', 'Please check Email is valid or not ');
       }
-      let response = await fetch(API_BASEURL + '/auth/init?' + new URLSearchParams({ email }).toString(), { method: "POST" });
+      let response = await fetch(API_BASEURL + '/api/auth/init?' + new URLSearchParams({ email }).toString(), { method: "POST" });
 
       if (response.status === 200) {
         store.setEmail(email);

@@ -1,6 +1,7 @@
 /* بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ ﷺ InshaAllah */
 
-export const API_BASEURL='http://localhost:8000';
+export const API_BASEURL='https://safe-p2p-call.onrender.com';
+export const SOCKET_BASEURL='https://127.0.0.1';
 export const BG_COLOR='#FFF';
 export const ACCENT_COLOR='#13AD13';
 export const COLORS = {

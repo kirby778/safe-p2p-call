@@ -11,18 +11,18 @@ export default function OtpVerification({ }) {
   const [otp, setOtp] = useState('');
   const isEditable = useRef(true)
   let store = useAuthStore();
-  let setToken = useStore(state => state.setToken);
+  let setToken = useStore(state => state.setBearerToken);
   const nav = useNavigation()
   const handleVerify = async () => {
     isEditable.current = false;
     try {
-      let response = await fetch(API_BASEURL + "/auth/verify", {
+      let response = await fetch(API_BASEURL + "/api/auth/verify", {
         headers: {
           'content-type': "application/json",
         },
         method: "post",
         body: JSON.stringify({
-          otp,
+          otp : Number(otp),
           email: store.email
         })
       });
@@ -32,6 +32,8 @@ export default function OtpVerification({ }) {
         await SecureStore.setItemAsync('bearerToken', token,);
         nav.navigate('Home')
       } else {
+        console.log((await response.json()));
+        
         throw new Error("Server Responded with " + response.status);
       }
     } catch (error) {
