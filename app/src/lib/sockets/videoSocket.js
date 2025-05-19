@@ -1,8 +1,8 @@
 /* بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ ﷺ InshaAllah */
 
 import { io } from 'socket.io-client';
-import useStore from './store';
-import { SOCKET_BASEURL } from '../config/env';
+import useStore from '../utils/store.js';
+import { SOCKET_BASEURL } from '../config/env.js';
 
 // Initialize socket connection to the video-calling-io namespace
 const socket = io(`${SOCKET_BASEURL}/video-calling-io`, {

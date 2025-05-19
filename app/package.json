@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
+    "startc": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -20,7 +21,7 @@
     "react-native": "0.79.2",
     "react-native-safe-area-context": "^5.4.0",
     "react-native-screens": "^4.10.0",
-    "react-native-webrtc": "^124.0.5",
+    "react-native-webrtc": "^124.0.4",
     "socket.io-client": "^4.8.1",
     "tailwindcss-react-native": "^1.7.10",
     "use-debounce": "^10.0.4",
