@@ -7,15 +7,16 @@ import { User } from '../../models/User.js';
 import { generateOTP , verifyOTP } from '../utils/otp.js';
 import OptVerficationEmail from '../mails/auth.mails.js';
 import { authMiddleware } from '../midleware/auth.middleware.js';
+import { ZodError } from 'zod';
 
 const router = Router();
 
 // Initialize authentication with email
 router.post('/auth/init', async (req, res) => {
     try {
-        const { email } = req.query;
+        let { email } = req.query;
 
-        email =await isValidEmail.parse(email);
+        email =await isValidEmail.parseAsync(email);
         // Find user or create if doesn't exist
         let user = await User.findOne({ email });
         
@@ -43,7 +44,7 @@ router.post('/auth/init', async (req, res) => {
         await user.save();
         
         // Send OTP to email
-        await OptVerficationEmail(otp.code);
+        await OptVerficationEmail(email , otp.code);
 
         
         return res.status(200).json({ 
@@ -55,6 +56,9 @@ router.post('/auth/init', async (req, res) => {
         
     } catch (error) {
         console.error('Auth init error:', error);
+
+        if (error instanceof ZodError) return res.status(400).json({ success: false, message: "Validation error", error });
+        
         return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
@@ -65,8 +69,16 @@ router.post('/auth/verify', async (req, res) => {
         const { email, otp } = req.body;
         
         if (!email || !otp) return res.status(400).json({ success: false, message: 'Email and OTP are required' });
-        if (!isValidEmail(email)) return res.status(400).json({ success: false, message: 'Invalid email format' });
-        
+        if (typeof opt !== 'number' || otp <= 99999 || otp >= 1000000) {
+            return res.status(400).json({
+                success : false ,
+                messages :"Otp is not valid"
+            })
+        }
+
+        email =await isValidEmail.parseAsync(email);
+       
+
         // Find user
         const user = await User.findOne({ email });
         if (!user) return res.status(404).json({ success: false, message: 'User not found' });
@@ -107,6 +119,8 @@ router.post('/auth/verify', async (req, res) => {
         });
     } catch (error) {
         console.error('Auth verify error:', error);
+        if (error instanceof ZodError) return res.status(400).json({ success: false, message: "Validation error", error });
+
         return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });

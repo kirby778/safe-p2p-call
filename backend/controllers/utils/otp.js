@@ -1,5 +1,7 @@
 /* بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ ﷺ InshaAllah */
 
+import crypto from 'crypto'
+
 export const generateOTP = () => {
     // Generate a 6-digit OTP
     const code =GenerateOtp();
@@ -9,7 +11,7 @@ export const generateOTP = () => {
     
     // Create hash of the OTP with salt
     const hash = crypto.createHmac('sha256', salt)
-        .update(code)
+        .update(code.toString())
         .digest('hex');
     
     // Store salt with hash (format: salt:hash)
@@ -40,7 +42,7 @@ export const verifyOTP = (params) => {
     
     // Create hash of the input code with the same salt
     const newHash = crypto.createHmac('sha256', salt)
-        .update(inputCode)
+        .update(inputCode.toString())
         .digest('hex');
     
     // Compare hashes

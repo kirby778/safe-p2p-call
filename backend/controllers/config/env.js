@@ -20,6 +20,7 @@ export const SMTP_PORT= process.env.SMTP_PORT;
 export const SMTP_USERNAME= process.env.SMTP_USERNAME;
 export const SMTP_PASSWORD= process.env.SMTP_PASSWORD;
 export const SMTP_API_KEY= process.env.SMTP_API_KEY;
+export const FROM_EMAIL= process.env.FROM_EMAIL;
 
 
 
